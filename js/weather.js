@@ -24,8 +24,9 @@ function loadWeather(location, woeid) {
             
             $(".location").text(city);
             $(".temperature").html(temp);
-            $(".climate_bg").html(wind);
+            $(".climate_bg").html(wcode);
             $(".humidity").text(humidity);
+            $(".windspeed").html(wind);
         },
         
         error: function(error) {
