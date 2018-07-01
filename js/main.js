@@ -1,12 +1,18 @@
+
 function getWeather(){
     if ("geolocation" in navigator) {
         navigator.geolocation.getCurrentPosition(function(position) {
-            loadWeather(position.coords.latitude + ',' + position.coords.longitude, "");
-        });
+        loadWeather(position.coords.latitude + ',' + position.coords.longitude, "");
+        },
+        function(error) {
+            loadWeather("Kolkata, IN", "");
+        }
+    );
     } else {
         loadWeather("Kolkata, IN", "");  
     }
 }
+
 $(document).ready(function() {
     setInterval(getWeather, 10000);  
 });
